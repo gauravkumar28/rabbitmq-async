@@ -1,4 +1,4 @@
-$consumer_config = YAML.load_file("config/consumer_config.yml")
+$consumer_config = YAML.load_file("config/consumer.yml")
 ActiveRecord::Base.class_eval do
   def perform_async(method, *args)
     RabbitmqHelper.publish_event({"object" => self, "method" => method, "arg_list" => args, "object_method" => true, "class" => self.class.name}, $consumer_config["common"]["self_exchange"], $consumer_config["consumer"]["#{self.class.table_name.singularize }"]["routing_key"])
