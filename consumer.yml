@@ -1,13 +1,13 @@
 consumer:
   user:
-    routing_ley: a
+    routing_key: a
     self_exchange: b
     queue: c
   comment:
-    routing_ley: a
+    routing_key: a
     self_exchange: b
     queue: c
-  geneic:
-    routing_ley: a
+  generic:
+    routing_key: a
     self_exchange: b
     queue: c
