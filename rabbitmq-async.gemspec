@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Gaurav Kumar"]
   spec.email         = ["gaurav.sachin.007@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
-  spec.homepage      = "http://www.github.com"
+  spec.summary       = %q{Ruby Gem to call Class methos Asynchronously using Rabbitmq}
+  spec.description   = %q{It is similar to resque, but uses rabbitmq}
+  spec.homepage      = "https://github.com/gauravkumar28/rabbitmq-async"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_dependency "bunny", '~> 2.7' 
+  spec.add_dependency "json", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
 end

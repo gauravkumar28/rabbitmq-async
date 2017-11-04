@@ -14,14 +14,14 @@ namespace :rabbitmq  do
     queue.bind(exchange, :routing_key => $consumer_config[consumer]["routing_key"])
 
     begin
-      q.subscribe(:block => true) do |delivery_info, properties, body|
+      queue.subscribe(:block => true) do |delivery_info, properties, body|
        #parse msg and invoke method
        params = JSON.parse(body)
        async_service = Rabbitmq::Async::Service.new(params)
        async_service.perform()
       end
     rescue Interrupt => _
-      ch.close
+      channel.close
       conn.close
     end
   end
