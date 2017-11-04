@@ -1,7 +1,7 @@
 require "bunny"
 
 module RabbitmqHelper
-  def publish_event(msg, exchange_name, routing_key)
+  def self.publish_event(msg, exchange_name, routing_key)
     connection = Bunny.new
     connection.start
 
