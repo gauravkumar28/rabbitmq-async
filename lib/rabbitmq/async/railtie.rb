@@ -1,4 +1,5 @@
  require 'rails'
+ require 'json'
  class Railtie < Rails::Railtie
     railtie_name :rabbitmq
 
@@ -19,7 +20,9 @@
           begin
             queue.subscribe(:block => true) do |delivery_info, properties, body|
              #parse msg and invoke method
+             puts "msg.......: #{body}"
              params = JSON.parse(body)
+             puts "params.......: #{params}"
              async_service = Rabbitmq::Async::Service.new(params)
              async_service.perform()
             end
