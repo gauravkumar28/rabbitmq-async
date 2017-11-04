@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    rabbitmq-async (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    amq-protocol (2.2.0)
+    bunny (2.7.2)
+      amq-protocol (>= 2.2.0)
+    minitest (5.10.3)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  bunny (~> 2.7)
+  minitest (~> 5.0)
+  rabbitmq-async!
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.0
