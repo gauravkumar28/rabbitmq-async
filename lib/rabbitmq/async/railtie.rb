@@ -7,7 +7,7 @@
         desc "outdated"
         task :consumer => :environment do
           consumer = ENV["name"] || "generic"
-          $consumer_config = YAML.load_file("#{Rails.root}/app/config/consumer.yml")
+          $consumer_config = YAML.load_file("#{Rails.root}/config/consumer.yml")
           conn = Bunny.new
           conn.start
           channel  = conn.create_channel

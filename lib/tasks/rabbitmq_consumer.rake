@@ -4,7 +4,7 @@ namespace :rabbitmq  do
   desc "create some fake data"
   task :consumer => :environment do
     consumer = ENV["name"] || "generic"
-    $consumer_config = YAML.load("config/consumer_config.yml")
+    $consumer_config = YAML.load("#{Rails.app}/config/consumer_config.yml")
     conn = Bunny.new
     conn.start
     channel  = conn.create_channel
