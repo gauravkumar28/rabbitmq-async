@@ -1,0 +1,13 @@
+consumer:
+  user:
+    routing_ley: a
+    self_exchange: b
+    queue: c
+  comment:
+    routing_ley: a
+    self_exchange: b
+    queue: c
+  geneic:
+    routing_ley: a
+    self_exchange: b
+    queue: c
