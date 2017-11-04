@@ -5,7 +5,7 @@ module RabbitmqHelper
     connection = Bunny.new
     connection.start
     channel  = connection.create_channel
-    exchange = channel.topic(exchange_name, :auto_delete => false)
+    exchange = channel.topic(exchange_name, :auto_delete => true)
     exchange.publish(msg.to_json, :routing_key => routing_key)
     connection.close
   end

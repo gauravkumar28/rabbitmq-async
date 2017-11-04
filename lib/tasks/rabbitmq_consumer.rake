@@ -8,7 +8,7 @@ namespace :rabbitmq  do
     conn = Bunny.new
     conn.start
     channel  = conn.create_channel
-    exchange   = channel.topic($consumer_config[consumer]["self_exchange"])
+    exchange   = channel.topic($consumer_config[consumer]["self_exchange"],  :auto_delete => true)
     queue   = channel.queue($consumer_config[consumer]["queue"], :exclusive => true)
 
     queue.bind(exchange, :routing_key => $consumer_config[consumer]["routing_key"])
