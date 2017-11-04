@@ -6,7 +6,7 @@ Any Ruby class can call perform_async method to execute a method asynchronously
 
 RabbitmqAsync is simillar to rescure
 
-[Demo app using RabbitmqAsync]()
+[Demo app using RabbitmqAsync](https://github.com/gauravkumar28/rabbitmq-async-demo)
 
 Say you have a ruby class
 ```ruby
@@ -72,8 +72,12 @@ Or install it yourself as:
     $ gem install rabbitmq-async
 
 ## Usage
-
-Need to add consumer.yml in app/config to specify queue name, exchange and routing key
+### create rabbitmq-async.rb in config/initializers/ and paste below code
+```ruby
+require 'yaml'
+$consumer_config = YAML.load_file("#{Rails.root}/config/consumer.yml")
+```
+### Also add consumer.yml in config/ to specify queue name, exchange and routing key
 To deal with scalablity each class can have differnt queue
 ```ruby
 consumer:
