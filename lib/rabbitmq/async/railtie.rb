@@ -24,7 +24,7 @@
              async_service.perform()
             end
           rescue Interrupt => _
-            ch.close
+            channel.close
             conn.close
           end
         end
